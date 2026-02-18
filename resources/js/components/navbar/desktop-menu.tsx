@@ -27,43 +27,23 @@ export default function DesktopMenu() {
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Edzések</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 p-4 w-120">
-              <ListItem href={LINKS.trainers} icon={LuUsers} title="Edzők">
-                Ismerje meg az edzőinket és a vezetőséget.
-              </ListItem>
-              <ListItem href={LINKS.departments} icon={LuMedal} title="Szakosztályok">
-                Tekintse meg a sportágakat és kategóriát.
-              </ListItem>
-              <ListItem href={LINKS.calendar} icon={LuCalendar} title="Edzéseink">
-                Nézze meg, hogy mikor tartunk edzéseket.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Gyűjtemény</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-2 p-4 w-120">
-              <ListItem href={LINKS.news} icon={LuNewspaper} title="Hírek">
-                Legfrissebb hírek és információk.
-              </ListItem>
-              <ListItem href={LINKS.store} icon={LuShoppingCart} title="Piactér">
-                BASE-s pulcsik, tollak és felszerelések.
-              </ListItem>
-              <ListItem href={LINKS.gallery} icon={LuVideotape} title="Történelmy kitekintés">
-                Videók az akrobatikus tornáról és történetéről.
-              </ListItem>
-              <ListItem href={LINKS.recommendations} icon={LuBookmarkCheck} title="Ajánlott oldalak">
-                Általunk ajánlott könyvek, cikkek és szövetségek.
-              </ListItem>
-            </ul>
-          </NavigationMenuContent>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href={LINKS.about_us}>Rólunk</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-            <Link href={LINKS.documents}>Dokumentumok</Link>
+            <Link href={LINKS.clubs}>Egyesületek</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href={LINKS.rules}>Szabályzatok</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href={LINKS.calendar}>Versenynaptár</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>

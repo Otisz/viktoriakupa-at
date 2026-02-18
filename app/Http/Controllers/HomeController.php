@@ -8,10 +8,7 @@ use LaraZeus\Sky\Models\Post;
 
 class HomeController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
+    public function index(Request $request)
     {
         $posts = Post::query()
             ->select(['id', 'title', 'slug', 'description', 'published_at'])
@@ -24,5 +21,30 @@ class HomeController extends Controller
         return Inertia::render('home', [
             'posts' => $posts,
         ]);
+    }
+
+    public function aboutUs()
+    {
+        return Inertia::render('about-us');
+    }
+
+    public function clubs()
+    {
+        return Inertia::render('clubs');
+    }
+
+    public function rules()
+    {
+        return Inertia::render('rules');
+    }
+
+    public function calendar()
+    {
+        return Inertia::render('calendar');
+    }
+
+    public function contact()
+    {
+        return Inertia::render('contact');
     }
 }

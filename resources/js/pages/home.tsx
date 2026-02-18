@@ -22,9 +22,7 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
       <main>
         <section className="container my-16">
           <h1 className="text-balance text-center font-bold text-6xl tracking-tighter">
-            <span className="text-primary">B</span>udai <span className="text-primary">A</span>
-            krobatikus <span className="text-primary">S</span>port <span className="text-primary">E</span>
-            gyesület
+            Viktória Kupa Versenysorozat Akrobatikus Torna
           </h1>
         </section>
         <section className="container ">
@@ -41,25 +39,9 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
         </section>
         <section className="container mt-16">
           <div className="prose prose-lg mx-auto max-w-[80ch]">
-            <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">Történetünk</h2>
-            <p>
-              BASE = Gázművek MTE sportakrobatika szakosztály folytatása: 1970-től a 90-es évek végéig az „akrobatikus
-              torna" akkori nevén sportakrobatika szakosztály vezetője, vezető edzője Kuti Lajos, segítő Füzér István és
-              Zátrok Béla edzők voltak. Sajnos Kuti Lajos És Füzér István halálával a szakosztály is elveszett,
-              megszűnt. Viszont felneveltek egy generációt, akik egy életre megszerették a tornának ezt a különleges
-              változatát, az akrobatikát.
-            </p>
-            <p>
-              Nem csak Óbudán, de egész Budán nem volt már ez a sportág. Így 2005 év végén úttörőként hozta vissza
-              Szücsi Ildikó (aki ma a BASE vezető- szakedzője), keltette életre a régi sporttársak támogatásával ezt a
-              nagyszerű sportágat és megszületett a Budai Akrobatikus Sport Egyesület a BASE!
-            </p>
+            <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">Mottónk</h2>
+            <p>Örülünk, ha az ellenfél, jól felkészült, mert így veszteni nem szégyen, de győzni dicsőség!</p>
           </div>
-        </section>
-        <section className="container mt-16 flex justify-center">
-          <Link href={Links.apply} className={buttonVariants({ className: "px-16 py-6 font-medium text-xl" })}>
-            Jelentkezés
-          </Link>
         </section>
         <section className="container mt-16">
           <div className="prose prose-lg mx-auto max-w-[80ch]">

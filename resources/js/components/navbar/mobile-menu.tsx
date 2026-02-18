@@ -40,49 +40,23 @@ export default function MobileMenu() {
         <div className="h-full space-y-8 overflow-auto pb-32">
           <div className="grid grid-cols-1 divide-y divide-border">
             <SheetClose asChild>
-              <Link href={LINKS.trainers} className="px-8 py-4" aria-label="Ugrás az edzők oldalra">
-                Edzők
+              <Link href={LINKS.about_us} className="px-8 py-4">
+                Rólunk
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link href={LINKS.departments} className="px-8 py-4" aria-label="Ugrás az szakosztályok oldalra">
-                Szakosztályok
+              <Link href={LINKS.clubs} className="px-8 py-4">
+                Egyesületek
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link href={LINKS.calendar} className="px-8 py-4" aria-label="Ugrás az edzéseink oldalra">
-                Edzéseink
+              <Link href={LINKS.rules} className="px-8 py-4">
+                Szabályzatok
               </Link>
             </SheetClose>
             <SheetClose asChild>
-              <Link href={LINKS.news} className="px-8 py-4" aria-label="Ugrás a hírek oldalra">
-                Hírek
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <a
-                href={LINKS.store}
-                target="_blank"
-                className="px-8 py-4"
-                aria-label="Ugrás a piactér oldalra (új lap)"
-                rel="noreferrer"
-              >
-                Piactér
-              </a>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href={LINKS.gallery} className="px-8 py-4" aria-label="Ugrás a történelmi kitekintés oldalra">
-                Történelmi kitekintés
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href={LINKS.recommendations} className="px-8 py-4" aria-label="Ugrás a ajánlott oldalak oldalra">
-                Ajánlott oldalak
-              </Link>
-            </SheetClose>
-            <SheetClose asChild>
-              <Link href={LINKS.documents} className="px-8 py-4" aria-label="Ugrás a dokumentumok oldalra">
-                Dokumentumok
+              <Link href={LINKS.calendar} className="px-8 py-4">
+                Versenynaptár
               </Link>
             </SheetClose>
             <SheetClose asChild>
@@ -91,7 +65,7 @@ export default function MobileMenu() {
               </Link>
             </SheetClose>
           </div>
-          <div className="grid grid-cols-3 gap-4 px-8">
+          <div className="grid grid-cols-1 gap-4 px-8">
             <a
               href={LINKS.facebook}
               target="_blank"
@@ -100,24 +74,6 @@ export default function MobileMenu() {
               rel="noreferrer"
             >
               <SiFacebook className="mx-auto size-12 fill-[#4267b2]" />
-            </a>
-            <a
-              href={LINKS.instagram}
-              target="_blank"
-              aria-label="Tekintse meg a Instagram oldalunkat"
-              title="Instagram"
-              rel="noreferrer"
-            >
-              <SiInstagram className="mx-auto size-12" />
-            </a>
-            <a
-              href={LINKS.youtube}
-              target="_blank"
-              aria-label="Tekintse meg a Youtube oldalunkat"
-              title="Youtube"
-              rel="noreferrer"
-            >
-              <SiYoutube className="mx-auto size-12 fill-[#ff0000]" />
             </a>
           </div>
         </div>
