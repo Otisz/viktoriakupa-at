@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 
-class Trainer extends Model
+class Club extends Model
 {
     use HasUuids;
     use SoftDeletes;
@@ -16,15 +16,6 @@ class Trainer extends Model
     protected $appends = [
         'image_url',
     ];
-
-    public static function boot(): void
-    {
-        parent::boot();
-
-        static::creating(static function (self $trainer) {
-            $trainer->order = self::query()->max('order') + 1;
-        });
-    }
 
     protected function imageUrl(): Attribute
     {

@@ -6,6 +6,7 @@ import CarouselImage3 from "@/assets/images/carousel/5ebc0a45-5383-41ea-9eb2-6aa
 import CarouselImage4 from "@/assets/images/carousel/78b7c771-5c48-4664-8e37-58755945ea27.jpg";
 import CarouselImage2 from "@/assets/images/carousel/00903ad0-2987-4bd1-9227-4ca1995936a6.jpg";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import contributors from "@/data/contributors";
 import sponsors from "@/data/sponsors";
 import PostCard from "@/featuers/posts/post-card";
 import PostsWrapper from "@/featuers/posts/posts-wrapper";
@@ -111,8 +112,9 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
               dobásokat és egyéb akrobatikus elemeket hajtsanak végre.
             </p>
             <p>
-              A BASE egyesületben szakképzett edzők irányításával, biztonságos környezetben sajátíthatják el a gyerekek
-              és fiatalok ennek a különleges sportágnak az alapjait és fejleszthetik képességeiket akár versenyszintig.
+              Az ország több pontján, Pesten és Budán 10 egyesületben szakképzett edzők irányításával, biztonságos
+              környezetben sajátíthatják el a gyerekek és fiatalok ennek a különleges sportágnak az alapjait és
+              fejleszthetik képességeiket akár versenyszintig.
             </p>
           </div>
         </section>
@@ -154,6 +156,32 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
                   height={48}
                 />
                 <span className="group-hover:text-primary group-hover:underline">{sponsor.name}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+        <section className="container my-16">
+          <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">
+            Együttműködő partnereink
+          </h2>
+          <div className="flex gap-8 justify-center mt-16">
+            {contributors.map((contributor) => (
+              <a
+                href={contributor.href}
+                key={contributor.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex flex-col items-center space-y-2 text-center"
+              >
+                <img
+                  className="col-span-2 mx-auto h-32 w-fit rounded object-contain lg:col-span-1"
+                  src={contributor.image}
+                  alt={contributor.name}
+                  title={contributor.name}
+                  width={158}
+                  height={48}
+                />
+                <span className="group-hover:text-primary group-hover:underline">{contributor.name}</span>
               </a>
             ))}
           </div>

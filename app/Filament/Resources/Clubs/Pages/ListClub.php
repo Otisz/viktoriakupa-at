@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Trainers\Pages;
+namespace App\Filament\Resources\Clubs\Pages;
 
-use App\Filament\Resources\Trainers\TrainerResource;
+use App\Filament\Resources\Clubs\ClubResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
-class ListTrainers extends ListRecords
+class ListClub extends ListRecords
 {
-    protected static string $resource = TrainerResource::class;
+    protected static string $resource = ClubResource::class;
 
     protected function getHeaderActions(): array
     {

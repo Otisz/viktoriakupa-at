@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Filament\Resources\Trainers\Pages;
+namespace App\Filament\Resources\Clubs\Pages;
 
-use App\Filament\Resources\Trainers\TrainerResource;
+use App\Filament\Resources\Clubs\ClubResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditTrainer extends EditRecord
+class EditClub extends EditRecord
 {
-    protected static string $resource = TrainerResource::class;
+    protected static string $resource = ClubResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
             DeleteAction::make(),
             ForceDeleteAction::make(),
             RestoreAction::make(),

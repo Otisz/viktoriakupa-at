@@ -3,7 +3,7 @@
 import { Link } from "@inertiajs/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { FaAlignRight, FaRegCircleXmark } from "react-icons/fa6";
-import { SiFacebook, SiInstagram, SiYoutube } from "react-icons/si";
+import { SiFacebook } from "react-icons/si";
 import {
   Sheet,
   SheetClose,
@@ -18,7 +18,7 @@ import LINKS from "@/data/links";
 export default function MobileMenu() {
   return (
     <Sheet>
-      <SheetTrigger aria-label="Navigációs menü megnyitása" className="block md:hidden">
+      <SheetTrigger aria-label="Navigációs menü megnyitása" className="block lg:hidden">
         <FaAlignRight className="h-8 w-8" />
       </SheetTrigger>
       <SheetContent noClose className="w-full border-none bg-background p-0">

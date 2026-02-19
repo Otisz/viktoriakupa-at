@@ -12,7 +12,7 @@ import LINKS from "@/data/links";
 
 export default function DesktopMenu() {
   return (
-    <NavigationMenu className="hidden md:flex">
+    <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>

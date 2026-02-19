@@ -10,14 +10,10 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('trainers', function (Blueprint $table) {
+        Schema::create('clubs', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->unsignedTinyInteger('order');
-            $table->string('slug')->unique();
             $table->string('name');
-            $table->string('color', 7);
-            $table->string('role');
-            $table->text('content')->nullable();
+            $table->string('url')->nullable();
             $table->string('image_paths');
             $table->timestamps();
             $table->softDeletes();
@@ -29,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('trainers');
+        Schema::dropIfExists('clubs');
     }
 };

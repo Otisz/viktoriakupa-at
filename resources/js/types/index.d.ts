@@ -81,14 +81,10 @@ export interface Post {
   deleted_at: string | null;
 }
 
-export interface Trainer {
+export interface Club {
   id: string;
-  order: number;
-  slug: string;
   name: string;
-  color: `#${string}`;
-  role: string;
-  content: string | null;
+  url: string | null;
   image_paths: string;
   image_url: string;
   created_at: string;

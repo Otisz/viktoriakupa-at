@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
 use App\Models\Document;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -31,7 +32,11 @@ class HomeController extends Controller
 
     public function clubs()
     {
-        return Inertia::render('clubs');
+        $clubs = Club::query()->orderBy('name')->get();
+
+        return Inertia::render('clubs', [
+            'clubs' => $clubs,
+        ]);
     }
 
     public function rules()

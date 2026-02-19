@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Trainers\Tables;
+namespace App\Filament\Resources\Clubs\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -14,7 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
-class TrainersTable
+class ClubsTable
 {
     public static function configure(Table $table): Table
     {
@@ -26,14 +26,9 @@ class TrainersTable
                 ImageColumn::make('image_paths')
                     ->visibility('public')
                     ->label('Kép'),
-                ColorColumn::make('color')
-                    ->label('Háttérszín'),
-                TextColumn::make('role')
-                    ->label('Pozíció'),
-                TextColumn::make('order')
-                    ->label('Sorrend')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('url')
+                    ->label('URL')
+                    ->default('Nincs megadva'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -50,13 +45,11 @@ class TrainersTable
                     ->label('Törölve')
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->reorderable('order')
-            ->defaultSort('order')
+            ->defaultSort('name')
             ->filters([
                 TrashedFilter::make(),
             ])
             ->recordActions([
-                ViewAction::make(),
                 EditAction::make(),
             ])
             ->toolbarActions([
