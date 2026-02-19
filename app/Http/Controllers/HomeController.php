@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use LaraZeus\Sky\Models\Post;
@@ -35,7 +36,11 @@ class HomeController extends Controller
 
     public function rules()
     {
-        return Inertia::render('rules');
+        $documents = Document::orderBy('title')->get();
+
+        return Inertia::render('rules', [
+            'documents' => $documents,
+        ]);
     }
 
     public function calendar()

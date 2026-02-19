@@ -23,12 +23,14 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 container transition-all duration-1000 [&>a]:block">
+        <div className="container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <figure className="mb-4">
             <img
               src="/images/logo_akro_art.png"
               alt="Akrobatikus Torna és Artistaművészeti Sporegyesület"
-              className="rounded-2xl mx-auto"
+              className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+              width={500}
+              height={500}
             />
             <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
               Akrobatikus Torna és Artistaművészeti Sporegyesület
@@ -39,7 +41,9 @@ export default function Page() {
               <img
                 src="/images/logo_etc.png"
                 alt="Érdi Torna Club"
-                className="rounded-2xl mx-auto group-hover:scale-110 transition"
+                className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+                width={600}
+                height={600}
               />
               <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
                 Érdi Torna Club
@@ -50,7 +54,9 @@ export default function Page() {
             <img
               src="/images/logo_akro.png"
               alt="Akrobatikus Tornasport Kft."
-              className="rounded-2xl mx-auto group-hover:scale-110 transition"
+              className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+              width={598}
+              height={344}
             />
             <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
               Akrobatikus Tornasport Kft.
@@ -61,7 +67,9 @@ export default function Page() {
               <img
                 src="/images/logo_ftc.png"
                 alt="Ferencvárosi Torna Club"
-                className="rounded-2xl mx-auto group-hover:scale-110 transition"
+                className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+                width={128}
+                height={136}
               />
               <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
                 Ferencvárosi Torna Club
@@ -72,7 +80,9 @@ export default function Page() {
             <img
               src="/images/logo_atak.png"
               alt="Abonyi Torna és Akrobatika Klub"
-              className="rounded-2xl mx-auto group-hover:scale-110 transition"
+              className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+              width={1920}
+              height={3840}
             />
             <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
               Abonyi Torna és Akrobatika Klub
@@ -83,10 +93,12 @@ export default function Page() {
               <img
                 src="/images/logo_puente.jpg"
                 alt="http://www.puente.hu/"
-                className="rounded-2xl mx-auto group-hover:scale-110 transition"
+                className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+                width={2048}
+                height={2048}
               />
               <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
-                http://www.puente.hu/
+                Puente Sportegyesület
               </figcaption>
             </figure>
           </a>
@@ -95,7 +107,9 @@ export default function Page() {
               <img
                 src="/images/logo_balance.jpg"
                 alt="Balance Akrobatika & Torna Club"
-                className="rounded-2xl mx-auto group-hover:scale-110 transition"
+                className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+                width={1301}
+                height={1109}
               />
               <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
                 Balance Akrobatika & Torna Club
@@ -106,7 +120,9 @@ export default function Page() {
             <img
               src="/images/logo_szpa_hse.png"
               alt="Szent Pál Akadémia – Hit Sportegyesület"
-              className="rounded-2xl mx-auto group-hover:scale-110 transition"
+              className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+              width={1202}
+              height={1428}
             />
             <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
               Szent Pál Akadémia – Hit Sportegyesület
@@ -117,7 +133,9 @@ export default function Page() {
               <img
                 src="/images/logo_base.png"
                 alt="Budai Akrobatikus Sport Egyesület"
-                className="rounded-2xl mx-auto group-hover:scale-110 transition"
+                className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+                width={714}
+                height={655}
               />
               <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
                 Budai Akrobatikus Sport Egyesület
@@ -128,7 +146,9 @@ export default function Page() {
             <img
               src="/images/logo_tfse.png"
               alt="Testnevelési Egyetem Sportegyesülete"
-              className="rounded-2xl mx-auto group-hover:scale-110 transition"
+              className="rounded-2xl mx-auto group-hover:scale-110 transition h-48 w-auto"
+              width={188}
+              height={235}
             />
             <figcaption className="text-center text-balance text-muted-foreground italic text-sm">
               Testnevelési Egyetem Sportegyesülete

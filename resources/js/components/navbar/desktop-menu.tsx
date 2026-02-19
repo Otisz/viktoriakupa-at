@@ -1,23 +1,11 @@
 import { Link } from "@inertiajs/react";
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
 import type { ComponentPropsWithoutRef } from "react";
 import type { IconType } from "react-icons";
 import {
-  LuBookmarkCheck,
-  LuCalendar,
-  LuMedal,
-  LuNewspaper,
-  LuShoppingCart,
-  LuUsers,
-  LuVideotape,
-} from "react-icons/lu";
-import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import LINKS from "@/data/links";

@@ -8,44 +8,22 @@ export default function Page() {
       <Head title="Kapcsolat"></Head>
       <main className="container space-y-8 px-4 pt-8 pb-20">
         <h1 className="text-5xl">Kapcsolat</h1>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="flex flex-col gap-4">
           <Card>
             <CardHeader>
-              <CardTitle>Telefon - Mester Gábor elnök</CardTitle>
+              <CardTitle>Telefon - Mester Gábor Viktória Kupa versenysorozat képviselő</CardTitle>
             </CardHeader>
             <CardContent>
               <p>
+                Telefon:{" "}
                 <a className="text-primary hover:underline" href="tel:+36 20 311 1919">
                   +36 20 311 1919
                 </a>
               </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Telefon - Szücsi Ildikó alelnök</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                <a className="text-primary hover:underline" href="tel:+36 20 983 1741">
-                  +36 20 983 1741
-                </a>
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Email</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              <p>
-                <a className="text-primary hover:underline" href="mailto:akrobatikustorna@gmail.com">
-                  akrobatikustorna@gmail.com
-                </a>
-              </p>
-              <p>
-                <a className="text-primary hover:underline" href="mailto:info@akrobatikustorna.hu">
-                  info@akrobatikustorna.hu
+              <p className="mt-4">
+                Email:{" "}
+                <a className="text-primary hover:underline" href="mailto:akrobatikustornakupa@gmail.com">
+                  akrobatikustornakupa@gmail.com
                 </a>
               </p>
             </CardContent>
