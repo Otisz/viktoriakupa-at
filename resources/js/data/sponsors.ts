@@ -1,3 +1,6 @@
+import GaborMester from "@/assets/images/gabor_mester.jpeg";
+import LeventeOtta from "@/assets/images/levente_otta.jpeg";
+
 export default [
   {
     name: "Expodom",
@@ -6,7 +9,12 @@ export default [
   },
   {
     name: "Levente Otta",
-    image: "https://leventeotta.com/icon4.png",
+    image: LeventeOtta,
     href: "https://leventeotta.com",
+  },
+  {
+    name: "Mester Gábor",
+    image: GaborMester,
+    href: "https://akrobatikustorna.hu",
   },
 ] as const;
