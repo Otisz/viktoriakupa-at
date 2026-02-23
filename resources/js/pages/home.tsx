@@ -15,7 +15,9 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
         <section className="container mt-16">
           <div className="prose prose-lg mx-auto max-w-[80ch]">
             <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">Mottónk</h2>
-            <p>Örülünk, ha az ellenfél, jól felkészült, mert így veszteni nem szégyen, de győzni dicsőség!</p>
+            <p className="text-center text-balance">
+              Örülünk, ha az ellenfél, jól felkészült, mert így veszteni nem szégyen, de győzni dicsőség!
+            </p>
           </div>
         </section>
         {props.posts.length > 0 ? (
