@@ -41,6 +41,7 @@ class FileResource extends Resource
                     ->columnSpanFull(),
                 FileUpload::make('path')
                     ->label('Fájl')
+                    ->disk('public')
                     ->directory('files')
                     ->visibility('public')
                     ->downloadable()

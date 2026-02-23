@@ -20,6 +20,7 @@ class DocumentForm
                 FileUpload::make('file_path')
                     ->directory('documents')
                     ->visibility('public')
+                    ->disk('public')
                     ->storeFileNamesIn('file_name')
                     ->label('Fájl')
                     ->downloadable()

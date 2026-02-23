@@ -29,6 +29,7 @@ class ClubForm
                 FileUpload::make('image_paths')
                     ->label('Kép')
                     ->image()
+                    ->disk('public')
                     ->directory('trainers')
                     ->visibility('public')
                     ->downloadable()
