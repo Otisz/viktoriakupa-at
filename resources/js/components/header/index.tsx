@@ -1,7 +1,15 @@
-import { Link } from "@inertiajs/react";
 import { LuPhone } from "react-icons/lu";
 import { SiFacebook } from "react-icons/si";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import LINKS from "@/data/links";
 
 export default function Header() {
@@ -18,14 +26,28 @@ export default function Header() {
           <span>+36 20 311 1919</span>
         </a>
         <div className="flex items-center gap-x-8">
-          <Link
-            href={LINKS.home}
-            className={buttonVariants({ variant: "secondary", size: "sm" })}
-            aria-label="Tovább a jelentkezés oldalra (új lap)"
-            title="Jelentkezés Google Forms-on keresztül"
-          >
-            Jelentkezés
-          </Link>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="secondary" size="sm">
+                Nevezés
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <a
+                    href={LINKS.apply}
+                    aria-label="Tovább a jelentkezés oldalra (új lap)"
+                    title="Jelentkezés Google Forms-on keresztül"
+                  >
+                    Ideiglenes nevezés
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>Végleges nevezés (Hamarosan)</DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <a
             href={LINKS.facebook}
             target="_blank"

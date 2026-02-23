@@ -20,6 +20,45 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="space-y-8">
+              <h3 className="font-semibold text-sm text-white leading-6 col-span-2">Tartalmak</h3>
+              <div className="md:grid md:grid-cols-2 md:gap-8">
+                <ul className="space-y-4">
+                  <li>
+                    <Link href={LINKS.about_us} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Rólunk
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={LINKS.clubs} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Egyesületek
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={LINKS.rules} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Szabályzatok
+                    </Link>
+                  </li>
+                </ul>
+                <ul className="space-y-4">
+                  <li>
+                    <Link href={LINKS.calendar} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Versenynaptár
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={LINKS.news} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Hírek
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href={LINKS.contact} className="text-gray-300 text-sm leading-6 hover:text-white">
+                      Kapcsolat
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div className="mt-10 md:mt-0">
                 <h3 className="font-semibold text-sm text-white leading-6">Bejelentkezés</h3>
