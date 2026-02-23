@@ -40,6 +40,11 @@ export default function MobileMenu() {
         <div className="h-full space-y-8 overflow-auto pb-32">
           <div className="grid grid-cols-1 divide-y divide-border">
             <SheetClose asChild>
+              <Link href={LINKS.news} className="px-8 py-4">
+                Hírek
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
               <Link href={LINKS.about_us} className="px-8 py-4">
                 Rólunk
               </Link>

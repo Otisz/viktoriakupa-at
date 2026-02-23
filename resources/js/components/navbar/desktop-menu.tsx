@@ -16,6 +16,11 @@ export default function DesktopMenu() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+            <Link href={LINKS.news}>Hírek</Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
             <Link href={LINKS.about_us}>Rólunk</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
