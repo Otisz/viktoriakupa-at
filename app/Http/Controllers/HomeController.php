@@ -28,7 +28,11 @@ class HomeController extends Controller
 
     public function aboutUs()
     {
-        return Inertia::render('about-us');
+        $about = Post::page()->whereSlug('rolunk')->firstOrFail();
+
+        return Inertia::render('about-us', [
+            'about' => $about,
+        ]);
     }
 
     public function clubs()
