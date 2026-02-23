@@ -22,7 +22,6 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use LaraZeus\Sky\Filament\Resources\FaqResource;
 use LaraZeus\Sky\Filament\Resources\LibraryResource;
 use LaraZeus\Sky\Filament\Resources\NavigationResource;
-use LaraZeus\Sky\Filament\Resources\PageResource;
 use LaraZeus\Sky\Filament\Resources\TagResource;
 use LaraZeus\Sky\SkyPlugin;
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
@@ -76,7 +75,6 @@ class StudioPanelProvider extends PanelProvider
                     ->navigationGroupLabel('Tartalmak')
                     ->hideResources([
                         TagResource::class,
-                        PageResource::class,
                         FaqResource::class,
                         LibraryResource::class,
                         NavigationResource::class,

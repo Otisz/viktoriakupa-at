@@ -15,7 +15,7 @@ export default function Page(props: SharedData<{ documents: Document[] }>) {
               href={document.file_url}
               className="rounded border border-gray-400 bg-white px-4 py-2 font-semibold text-foreground text-xl shadow hover:bg-background/25"
               target="_blank"
-              download={document.file_name}
+              // download={document.file_name}
               aria-label={`${document.title} szabályzat letöltése`}
               rel="noreferrer"
             >

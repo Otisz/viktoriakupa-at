@@ -1,9 +1,7 @@
-import expodom from "@/assets/images/sponsors/expodom.png";
-
 export default [
   {
     name: "Expodom",
-    image: expodom,
+    image: "https://www.expodom.hu/assets/parent-theme/img/expodom-logo-hu.png?v=1771415848",
     href: "https://expodom.hu/",
   },
   {

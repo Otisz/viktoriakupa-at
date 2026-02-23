@@ -21,7 +21,7 @@ export default function PostCard(props: Props) {
           />
           <time
             dateTime={props.post.published_at}
-            className="absolute top-2 right-2 rounded-lg bg-primary p-0.5 text-sm"
+            className="absolute top-2 right-2 rounded-lg bg-primary p-0.5 text-sm text-primary-foreground"
           >
             {new Date(props.post.published_at).toLocaleDateString("hu")}
           </time>

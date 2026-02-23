@@ -81,6 +81,10 @@ export interface Post {
   deleted_at: string | null;
 }
 
+export interface Page extends Post {
+  post_type: "page";
+}
+
 export interface Club {
   id: string;
   name: string;

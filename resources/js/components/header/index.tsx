@@ -1,6 +1,7 @@
-/** biome-ignore-all lint/correctness/useUniqueElementIds: <explanation> */
+import { Link } from "@inertiajs/react";
 import { LuPhone } from "react-icons/lu";
 import { SiFacebook } from "react-icons/si";
+import { buttonVariants } from "@/components/ui/button";
 import LINKS from "@/data/links";
 
 export default function Header() {
@@ -16,16 +17,26 @@ export default function Header() {
           <LuPhone />
           <span>+36 20 311 1919</span>
         </a>
-        <a
-          href={LINKS.facebook}
-          target="_blank"
-          aria-label="Tekintse meg a Facebook oldalunkat"
-          className="group"
-          title="Facebook"
-          rel="noreferrer"
-        >
-          <SiFacebook className="size-8 group-hover:fill-[#4267b2]" />
-        </a>
+        <div className="flex items-center gap-x-8">
+          <Link
+            href={LINKS.home}
+            className={buttonVariants({ variant: "secondary", size: "sm" })}
+            aria-label="Tovább a jelentkezés oldalra (új lap)"
+            title="Jelentkezés Google Forms-on keresztül"
+          >
+            Jelentkezés
+          </Link>
+          <a
+            href={LINKS.facebook}
+            target="_blank"
+            aria-label="Tekintse meg a Facebook oldalunkat"
+            className="group"
+            title="Facebook"
+            rel="noreferrer"
+          >
+            <SiFacebook className="size-8 group-hover:fill-[#4267b2]" />
+          </a>
+        </div>
       </div>
     </header>
   );

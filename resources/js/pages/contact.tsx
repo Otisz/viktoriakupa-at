@@ -28,46 +28,6 @@ export default function Page() {
               </p>
             </CardContent>
           </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>Levelezési cím</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>1038 Budapest Határ út 15.</p>
-            </CardContent>
-          </Card>
-          <Card className="md:col-span-2">
-            <CardHeader>
-              <CardTitle>Torna Csarnok</CardTitle>
-              <CardDescription>BMSZC Bláthy Ottó Titusz Informatikai Technikum</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <noscript>
-                <p>
-                  <a
-                    className="text-primary hover:underline"
-                    href="https://goo.gl/maps/BxvvHhFyhV3GWPcS9"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    1032 Budapest, Bécsi út 134
-                  </a>
-                </p>
-              </noscript>
-              <p>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5386.781142626678!2d19.0254142!3d47.5407267!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741d965189cf915%3A0xd7c9db1c8efb4d8e!2sBudai%20Akrobatikus%20Sport%20Egyes%C3%BClet!5e0!3m2!1sen!2shu!4v1748309587347!5m2!1sen!2shu"
-                  width="600"
-                  height="450"
-                  className="w-full border-0"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Budai Akrobatikus Sport Egyesület - Torna Csarnok"
-                  allowFullScreen
-                />
-              </p>
-            </CardContent>
-          </Card>
         </div>
       </main>
     </AppLayout>

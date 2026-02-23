@@ -6,6 +6,7 @@ use App\Models\Club;
 use App\Models\Document;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use LaraZeus\Sky\Livewire\Page;
 use LaraZeus\Sky\Models\Post;
 
 class HomeController extends Controller
@@ -50,7 +51,11 @@ class HomeController extends Controller
 
     public function calendar()
     {
-        return Inertia::render('calendar');
+        $calendar = Post::page()->whereSlug('versenynaptar')->firstOrFail();
+
+        return Inertia::render('calendar', [
+            'calendar' => $calendar,
+        ]);
     }
 
     public function contact()
