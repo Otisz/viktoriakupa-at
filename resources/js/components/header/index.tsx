@@ -45,7 +45,7 @@ export default function Header() {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a
-                    href={LINKS.apply_temp}
+                    href={LINKS.apply_perma}
                     aria-label="Tovább a végleges jelentkezés oldalra (új lap)"
                     title="Végleges jelentkezés Google Forms-on keresztül"
                   >
