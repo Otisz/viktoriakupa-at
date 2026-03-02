@@ -20,7 +20,11 @@ class DocumentsTable
                     ->label('Cím')
                     ->searchable(),
                 TextColumn::make('type')
-                    ->label('Típus'),
+                    ->label('Típus')
+                    ->formatStateUsing(fn ($state) => [
+                        'rule' => 'Szabályzat',
+                        'competition' => 'Versenykiírás',
+                    ][$state] ?? $state),
                 TextColumn::make('updated_at')
                     ->label('Utoljára módosítva')
                     ->dateTime(),
