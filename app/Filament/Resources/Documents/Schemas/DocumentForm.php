@@ -22,7 +22,9 @@ class DocumentForm
                     ->options([
                         'rule' => 'Szabályzat',
                         'competition' => 'Versenykiírás',
-                    ]),
+                    ])
+                    ->default('rule')
+                    ->required(),
                 FileUpload::make('file_path')
                     ->directory('documents')
                     ->visibility('public')
