@@ -19,6 +19,7 @@ class DocumentForm
                     ->label('Cím')
                     ->required(),
                 Select::make('type')
+                    ->label('Típus')
                     ->options([
                         'rule' => 'Szabályzat',
                         'competition' => 'Versenykiírás',
