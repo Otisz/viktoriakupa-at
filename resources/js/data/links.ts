@@ -3,9 +3,11 @@ export default {
   about_us: "/rolunk",
   clubs: "/egyesuletek",
   rules: "/szabalyzatok",
+  competition_announcements: "/versenykiirasok",
   calendar: "/versenynaptar",
   contact: "/kapcsolat",
   news: "/hirek",
-  apply: "https://forms.gle/8vQ3NPetmJDAiLZN8",
+  apply_temp: "https://forms.gle/hyL6UfdJ5MZjwsK18",
+  apply_perma: "https://forms.gle/HGmtD22uSAYmvEkYA",
   facebook: "https://www.facebook.com/profile.php?id=100064131873913",
 } as const;

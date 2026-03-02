@@ -60,6 +60,11 @@ export default function MobileMenu() {
               </Link>
             </SheetClose>
             <SheetClose asChild>
+              <Link href={LINKS.competition_announcements} className="px-8 py-4">
+                Versenykiírások
+              </Link>
+            </SheetClose>
+            <SheetClose asChild>
               <Link href={LINKS.calendar} className="px-8 py-4">
                 Versenynaptár
               </Link>

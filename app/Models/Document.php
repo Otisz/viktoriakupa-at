@@ -4,6 +4,8 @@ namespace App\Models;
 
 use App\Observers\DocumentObserver;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
@@ -23,5 +25,17 @@ class Document extends Model
         return Attribute::make(
             get: fn($value, array $attributes) => Storage::url($attributes['file_path']),
         );
+    }
+
+    #[Scope]
+    protected function rule(Builder $query): Builder
+    {
+        return $query->where('type', 'rule');
+    }
+
+    #[Scope]
+    protected function competition(Builder $query): Builder
+    {
+        return $query->where('type', 'competition');
     }
 }

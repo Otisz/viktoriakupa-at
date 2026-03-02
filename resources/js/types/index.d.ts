@@ -39,6 +39,7 @@ export interface User {
 export interface Document {
   id: string;
   title: string;
+  type: "rule" | "competition";
   file_name: string;
   file_path: string;
   file_url: string;

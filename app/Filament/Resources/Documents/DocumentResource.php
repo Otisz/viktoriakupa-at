@@ -25,9 +25,9 @@ class DocumentResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = 'Tartalmak';
 
-    protected static ?string $modelLabel = 'Szabályzat';
+    protected static ?string $modelLabel = 'Dokumentum';
 
-    protected static ?string $pluralModelLabel = 'Szabályzatok';
+    protected static ?string $pluralModelLabel = 'Dokumentumok';
 
     public static function form(Schema $schema): Schema
     {

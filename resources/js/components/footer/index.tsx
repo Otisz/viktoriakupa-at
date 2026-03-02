@@ -39,6 +39,14 @@ export default function Footer() {
                       Szabályzatok
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href={LINKS.competition_announcements}
+                      className="text-gray-300 text-sm leading-6 hover:text-white"
+                    >
+                      Versenykiírások
+                    </Link>
+                  </li>
                 </ul>
                 <ul className="space-y-4">
                   <li>

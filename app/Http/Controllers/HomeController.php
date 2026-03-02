@@ -46,9 +46,18 @@ class HomeController extends Controller
 
     public function rules()
     {
-        $documents = Document::orderBy('title')->get();
+        $documents = Document::query()->rule()->orderBy('title')->get();
 
         return Inertia::render('rules', [
+            'documents' => $documents,
+        ]);
+    }
+
+    public function competitions()
+    {
+        $documents = Document::query()->competition()->orderBy('title')->get();
+
+        return Inertia::render('competitions', [
             'documents' => $documents,
         ]);
     }

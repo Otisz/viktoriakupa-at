@@ -36,14 +36,22 @@ export default function Header() {
               <DropdownMenuGroup>
                 <DropdownMenuItem asChild>
                   <a
-                    href={LINKS.apply}
-                    aria-label="Tovább a jelentkezés oldalra (új lap)"
-                    title="Jelentkezés Google Forms-on keresztül"
+                    href={LINKS.apply_temp}
+                    aria-label="Tovább az ideiglenes jelentkezés oldalra (új lap)"
+                    title="Ideiglenes jelentkezés Google Forms-on keresztül"
                   >
                     Ideiglenes nevezés
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem disabled>Végleges nevezés (Hamarosan)</DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href={LINKS.apply_temp}
+                    aria-label="Tovább a végleges jelentkezés oldalra (új lap)"
+                    title="Végleges jelentkezés Google Forms-on keresztül"
+                  >
+                    Végleges nevezés
+                  </a>
+                </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>

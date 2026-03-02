@@ -19,8 +19,10 @@ class DocumentsTable
                 TextColumn::make('title')
                     ->label('Cím')
                     ->searchable(),
-                TextColumn::make('created_at')
-                    ->label('Lérehozva')
+                TextColumn::make('type')
+                    ->label('Típus'),
+                TextColumn::make('updated_at')
+                    ->label('Utoljára módosítva')
                     ->dateTime(),
             ])
             ->filters([
