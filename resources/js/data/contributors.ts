@@ -1,4 +1,11 @@
+import hotel_aranysas from "@/assets/images/contributors/hotel_aranysas.jpeg";
+
 export default [
+  {
+    name: "Hotel Aranysas",
+    image: hotel_aranysas,
+    href: "https://xn--aranysasalsrs-llb9b.hu/",
+  },
   {
     name: "Abonyi Önkormányzat",
     image: "https://abony.hu/images/abony-cimer-logo.png",
