@@ -4,6 +4,7 @@ import { Link } from "@inertiajs/react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { FaAlignRight, FaRegCircleXmark } from "react-icons/fa6";
 import { SiFacebook } from "react-icons/si";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -74,6 +75,24 @@ export default function MobileMenu() {
                 Kapcsolat
               </Link>
             </SheetClose>
+          </div>
+          <div className="flex flex-col gap-4 px-8">
+            <a
+              className={buttonVariants({ size: "lg" })}
+              href={LINKS.apply_temp}
+              aria-label="Tovább az ideiglenes jelentkezés oldalra (új lap)"
+              title="Ideiglenes jelentkezés Google Forms-on keresztül"
+            >
+              Ideiglenes nevezés
+            </a>
+            <a
+              className={buttonVariants({ size: "lg" })}
+              href={LINKS.apply_perma}
+              aria-label="Tovább a végleges jelentkezés oldalra (új lap)"
+              title="Végleges jelentkezés Google Forms-on keresztül"
+            >
+              Végleges nevezés
+            </a>
           </div>
           <div className="grid grid-cols-1 gap-4 px-8">
             <a

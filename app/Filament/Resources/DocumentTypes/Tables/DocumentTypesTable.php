@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Documents\Tables;
+namespace App\Filament\Resources\DocumentTypes\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,7 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class DocumentsTable
+class DocumentTypesTable
 {
     public static function configure(Table $table): Table
     {
@@ -17,11 +17,6 @@ class DocumentsTable
                 TextColumn::make('title')
                     ->label('Cím')
                     ->searchable(),
-                TextColumn::make('documentType.title')
-                    ->label('Típus'),
-                TextColumn::make('updated_at')
-                    ->label('Utoljára módosítva')
-                    ->dateTime(),
             ])
             ->filters([
                 //

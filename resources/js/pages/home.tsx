@@ -40,7 +40,7 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
         ) : null}
         <section className="container my-16">
           <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">Támogatóink</h2>
-          <div className="flex gap-8 justify-center mt-16">
+          <div className="flex gap-8 flex-wrap justify-center mt-16">
             {sponsors.map((sponsor) => (
               <a
                 href={sponsor.href}
@@ -66,7 +66,7 @@ export default function Page(props: SharedData<{ posts: Post[] }>) {
           <h2 className="text-center font-bold text-3xl tracking-tighter sm:text-4xl md:text-5xl">
             Együttműködő partnereink
           </h2>
-          <div className="flex gap-8 justify-center mt-16">
+          <div className="flex flex-wrap gap-8 justify-center mt-16">
             {contributors.map((contributor) => (
               <a
                 href={contributor.href}

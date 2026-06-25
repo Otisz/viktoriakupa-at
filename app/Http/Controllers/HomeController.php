@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Club;
-use App\Models\Document;
+use App\Models\DocumentType;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use LaraZeus\Sky\Livewire\Page;
 use LaraZeus\Sky\Models\Post;
 
 class HomeController extends Controller
@@ -44,21 +43,13 @@ class HomeController extends Controller
         ]);
     }
 
-    public function rules()
+    public function documents(DocumentType $documentType)
     {
-        $documents = Document::query()->rule()->orderBy('title')->get();
+        $documents = $documentType->documents()->orderBy('title')->get();
 
-        return Inertia::render('rules', [
-            'documents' => $documents,
-        ]);
-    }
-
-    public function competitions()
-    {
-        $documents = Document::query()->competition()->orderBy('title')->get();
-
-        return Inertia::render('competitions', [
-            'documents' => $documents,
+        return Inertia::render('documents', [
+            'documentType' => $documentType->toArray(),
+            'documents' => $documents->toArray(),
         ]);
     }
 

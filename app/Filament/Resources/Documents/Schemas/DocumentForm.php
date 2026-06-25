@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\Documents\Schemas;
 
-use App\Models\Document;
+use App\Models\DocumentType;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -18,13 +18,9 @@ class DocumentForm
                     ->maxLength(255)
                     ->label('Cím')
                     ->required(),
-                Select::make('type')
+                Select::make('document_type_id')
                     ->label('Típus')
-                    ->options([
-                        'rule' => 'Szabályzat',
-                        'competition' => 'Versenykiírás',
-                    ])
-                    ->default('rule')
+                    ->options(DocumentType::pluck('title', 'id'))
                     ->required(),
                 FileUpload::make('file_path')
                     ->directory('documents')

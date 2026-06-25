@@ -1,19 +1,14 @@
-import { Link } from "@inertiajs/react";
-import type { ComponentPropsWithoutRef } from "react";
-import type { IconType } from "react-icons";
-import { Button } from "@/components/ui/button";
+import { Link, usePage } from "@inertiajs/react";
+import { buttonVariants } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
@@ -21,8 +16,12 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import LINKS from "@/data/links";
+import { cn } from "@/lib/utils";
+import type { SharedData } from "@/types";
 
 export default function DesktopMenu() {
+  const page = usePage();
+
   return (
     <NavigationMenu className="hidden lg:flex">
       <NavigationMenuList>
@@ -48,12 +47,11 @@ export default function DesktopMenu() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <Link href={LINKS.rules}>Szabályzatok</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href={LINKS.competition_announcements}>Versenykirások</Link>
-                </DropdownMenuItem>
+                {Object.entries((page.props as unknown as SharedData).documentTypes).map(([slug, title]) => (
+                  <DropdownMenuItem key={slug} asChild>
+                    <Link href={`/dokumentumok/${slug}`}>{title}</Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -68,22 +66,38 @@ export default function DesktopMenu() {
             <Link href={LINKS.contact}>Kapcsolat</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <NavigationMenuTrigger className={cn(buttonVariants(), "hover:text-primary-foreground")}>
+                Nevezés
+              </NavigationMenuTrigger>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                  <a
+                    href={LINKS.apply_temp}
+                    aria-label="Tovább az ideiglenes jelentkezés oldalra (új lap)"
+                    title="Ideiglenes jelentkezés Google Forms-on keresztül"
+                  >
+                    Ideiglenes nevezés
+                  </a>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <a
+                    href={LINKS.apply_perma}
+                    aria-label="Tovább a végleges jelentkezés oldalra (új lap)"
+                    title="Végleges jelentkezés Google Forms-on keresztül"
+                  >
+                    Végleges nevezés
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  );
-}
-
-function ListItem({ title, children, href, ...props }: ComponentPropsWithoutRef<"li"> & { href: string }) {
-  return (
-    <li {...props}>
-      <NavigationMenuLink asChild>
-        <Link href={href}>
-          <div className="flex flex-col gap-1 text-sm">
-            <div className="leading-none font-medium">{title}</div>
-            <div className="text-muted-foreground line-clamp-2">{children}</div>
-          </div>
-        </Link>
-      </NavigationMenuLink>
-    </li>
   );
 }

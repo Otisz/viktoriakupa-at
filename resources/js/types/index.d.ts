@@ -10,6 +10,7 @@ export interface SharedData<T extends object = {}> extends T {
   auth: Auth;
   ziggy: Config & { location: string };
   sidebarOpen: boolean;
+  documentTypes: Record<string, string>;
 }
 
 export type Pagination<T> = {
@@ -34,6 +35,14 @@ export interface User {
   created_at: string;
   updated_at: string;
   [key: string]: unknown; // This allows for additional properties...
+}
+
+export interface DocumentType {
+  id: string;
+  title: string;
+  slug: string;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface Document {

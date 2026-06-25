@@ -1,0 +1,63 @@
+<?php
+
+namespace App\Filament\Resources\DocumentTypes;
+
+use App\Filament\Resources\Documents\Pages\CreateDocument;
+use App\Filament\Resources\Documents\Pages\EditDocument;
+use App\Filament\Resources\Documents\Pages\ListDocuments;
+use App\Filament\Resources\Documents\Schemas\DocumentForm;
+use App\Filament\Resources\Documents\Tables\DocumentsTable;
+use App\Filament\Resources\DocumentTypes\Pages\CreateDocumentType;
+use App\Filament\Resources\DocumentTypes\Pages\EditDocumentType;
+use App\Filament\Resources\DocumentTypes\Pages\ListDocumentTypes;
+use App\Filament\Resources\DocumentTypes\Schemas\DocumentTypeForm;
+use App\Filament\Resources\DocumentTypes\Tables\DocumentTypesTable;
+use App\Models\Document;
+use App\Models\DocumentType;
+use BackedEnum;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+use UnitEnum;
+
+class DocumentTypeResource extends Resource
+{
+    protected static ?string $model = DocumentType::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentArrowDown;
+
+    protected static ?string $recordTitleAttribute = 'title';
+
+    protected static string|UnitEnum|null $navigationGroup = 'Tartalmak';
+
+    protected static ?string $modelLabel = 'Dokumentum Típus';
+
+    protected static ?string $pluralModelLabel = 'Dokumentum Típusok';
+
+    public static function form(Schema $schema): Schema
+    {
+        return DocumentTypeForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return DocumentTypesTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListDocumentTypes::route('/'),
+            'create' => CreateDocumentType::route('/create'),
+            'edit' => EditDocumentType::route('/{record}/edit'),
+        ];
+    }
+}

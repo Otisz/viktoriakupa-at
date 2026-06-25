@@ -1,72 +1,22 @@
-import { LuPhone } from "react-icons/lu";
-import { SiFacebook } from "react-icons/si";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import LINKS from "@/data/links";
+import { Link } from "@inertiajs/react";
 
 export default function Header() {
   return (
-    <header className="h-14 bg-primary text-primary-foreground">
-      <div className="container flex h-full items-center justify-between gap-4">
-        <a
-          href="tel:+36 20 311 1919"
-          aria-label="Hívjon minket a +36 20 311 1919 telefonszámon"
-          className="inline-flex items-center gap-x-2 text-xl hover:underline hover:underline-offset-2"
-          title="Hívjon minket a +36 20 311 1919 telefonszámon"
-        >
-          <LuPhone />
-          <span>+36 20 311 1919</span>
-        </a>
-        <div className="flex items-center gap-x-8">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="sm">
-                Nevezés
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={LINKS.apply_temp}
-                    aria-label="Tovább az ideiglenes jelentkezés oldalra (új lap)"
-                    title="Ideiglenes jelentkezés Google Forms-on keresztül"
-                  >
-                    Ideiglenes nevezés
-                  </a>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <a
-                    href={LINKS.apply_perma}
-                    aria-label="Tovább a végleges jelentkezés oldalra (új lap)"
-                    title="Végleges jelentkezés Google Forms-on keresztül"
-                  >
-                    Végleges nevezés
-                  </a>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <a
-            href={LINKS.facebook}
-            target="_blank"
-            aria-label="Tekintse meg a Facebook oldalunkat"
-            className="group"
-            title="Facebook"
-            rel="noreferrer"
-          >
-            <SiFacebook className="size-8 group-hover:fill-[#4267b2]" />
-          </a>
-        </div>
+    <header className="py-4 bg-primary text-primary-foreground">
+      <div className="container flex h-full items-center justify-center">
+        <Link href="/" className="flex lg:flex-row items-center gap-2 flex-wrap justify-center">
+          <img
+            src="/images/logo_matsz.png"
+            alt="Magyar Akrobatikus Torna Szakág logo"
+            className="h-26 w-auto order-1"
+          />
+          <div className="flex flex-col gap-2 items-center justify-center text-primary-foreground tracking-wider text-center text-balance order-3 lg:order-2">
+            <p className="font-semibold text-xl">Magyar Torna Szövetség</p>
+            <p className="font-semibold text-2xl">Akrobatikus Torna Szakág</p>
+            <p className="font-bold text-3xl">Viktoria Kupa Versenysorozat</p>
+          </div>
+          <img src="/images/logo_vk.png" alt="Viktoria Kupa logo" className="h-26 w-auto order-2 lg:order-3" />
+        </Link>
       </div>
     </header>
   );
