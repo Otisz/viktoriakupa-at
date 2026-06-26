@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 space-y-2 border-white/10 border-t pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-gray-400 text-xs leading-5">&copy; 2026 Viktória Kupa. Minden jog fenntartva.</p>
+          <p className="text-gray-400 text-xs leading-5">&copy; 2026 Mester Gábor. Minden jog fenntartva.</p>
           <p className="text-gray-400 text-xs leading-5" lang="en">
             Made with ❤️ by{" "}
             <a href="https://leventeotta.com" target="_blank" className="hover:underline" rel="noreferrer">
