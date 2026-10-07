@@ -48,3 +48,13 @@ function listedPostTitles(string $body): array
 
     return $matches[1];
 }
+
+/**
+ * @return array<string, string> the HTML of each listed Club, keyed by name
+ */
+function listedClubs(string $body): array
+{
+    preg_match_all('/<article>.*?<h2>(?:<a [^>]*>)?([^<]+).*?<\/article>/s', $body, $matches);
+
+    return array_combine($matches[1], $matches[0]);
+}

@@ -1,20 +1,8 @@
 <?php
 
-require_once ABSPATH . 'wp-admin/includes/image.php';
-
 wp_delete_post(get_page_by_path('hello-world', OBJECT, 'post')->ID ?? 0, true);
 
-$uploads = wp_upload_dir();
-$imagePath = "{$uploads['basedir']}/seed/teszt-hir-kiemelt.png";
-$imageId = attachment_url_to_postid("{$uploads['baseurl']}/seed/teszt-hir-kiemelt.png");
-
-if (! $imageId) {
-    wp_mkdir_p(dirname($imagePath));
-    imagepng(imagecreatetruecolor(800, 450), $imagePath);
-
-    $imageId = wp_insert_attachment(['post_mime_type' => 'image/png', 'post_title' => 'Teszt hír kiemelt kép'], $imagePath);
-    wp_update_attachment_metadata($imageId, wp_generate_attachment_metadata($imageId, $imagePath));
-}
+$imageId = seedImage('teszt-hir-kiemelt', 800, 450);
 
 foreach (range(1, 16) as $number) {
     $slug = sprintf('teszt-hir-%02d', $number);
