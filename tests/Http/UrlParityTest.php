@@ -21,6 +21,8 @@ it('keeps the legacy public routes', function (string $path, int $status, ?strin
     ['/kapcsolat/', 301, '/kapcsolat'],
     ['/hirek', 200],
     ['/hirek/', 301, '/hirek'],
+    ['/hirek/page/2', 200],
+    ['/hirek/page/2/', 301, '/hirek/page/2'],
     ['/hirek/teszt-hir-16', 200],
     ['/hirek/teszt-hir-16/', 301, '/hirek/teszt-hir-16'],
     ['/studio', 301, '/wp/wp-admin/'],

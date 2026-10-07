@@ -15,3 +15,15 @@ add_action('template_redirect', function (): void {
         exit;
     }
 }, 1);
+
+// Core drops a non-default port (like local :8080) from paginated canonical URLs, which cancels their trailing-slash redirect
+add_filter('redirect_canonical', function (mixed $url): mixed {
+    $home = wp_parse_url(home_url());
+    $target = is_string($url) ? wp_parse_url($url) : false;
+
+    if (! $target || empty($home['port']) || isset($target['port']) || ($target['host'] ?? null) !== $home['host']) {
+        return $url;
+    }
+
+    return preg_replace('#^(\w+://[^/?\#]+)#', '$1:' . $home['port'], $url, 1);
+});
