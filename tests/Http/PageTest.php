@@ -4,7 +4,7 @@ it('renders a Page at its legacy path', function (string $path, string $title, s
     $response = request($path);
 
     expect($response['status'])->toBe(200)
-        ->and($response['body'])->toContain($title)
+        ->and($response['body'])->toContain("<h1>{$title}</h1>")
         ->and($response['body'])->toContain($content);
 })->with([
     ['/rolunk', 'Rólunk', 'A Viktória Kupa történetéről.'],
