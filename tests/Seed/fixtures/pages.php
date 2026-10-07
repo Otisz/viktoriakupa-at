@@ -31,8 +31,6 @@ $pages = [
     'kapcsolat' => ['title' => 'Kapcsolat', 'content' => $paragraph('Írjon nekünk a szervezőknek.')],
 ];
 
-$ids = [];
-
 foreach ($pages as $slug => $page) {
     $id = wp_insert_post([
         'ID' => get_page_by_path($slug)->ID ?? 0,
@@ -46,9 +44,4 @@ foreach ($pages as $slug => $page) {
     if (is_wp_error($id)) {
         WP_CLI::error("Page {$slug}: {$id->get_error_message()}");
     }
-
-    $ids[$slug] = $id;
 }
-
-update_option('show_on_front', 'page');
-update_option('page_on_front', $ids['kezdolap']);
