@@ -21,5 +21,11 @@ wp option update posts_per_page 15
 wp plugin activate advanced-custom-fields wordpress-seo
 wp theme activate viktoriakupa
 
+posts_page=$(wp post list --post_type=page --name=hirek --field=ID)
+if [ -z "$posts_page" ]; then
+    posts_page=$(wp post create --post_type=page --post_status=publish --post_name=hirek --post_title='Hírek' --porcelain)
+fi
+wp option update page_for_posts "$posts_page"
+
 wp rewrite structure '/hirek/%postname%'
 wp rewrite flush

@@ -26,7 +26,6 @@ $pages = [
             $logo('kozremukodo', 'Teszt Közreműködő logó'),
         ]),
     ],
-    'hirek' => ['title' => 'Hírek', 'content' => ''],
     'rolunk' => ['title' => 'Rólunk', 'content' => $paragraph('A Viktória Kupa történetéről.')],
     'versenynaptar' => ['title' => 'Versenynaptár', 'content' => $paragraph('Az idei verseny időpontjai.')],
     'kapcsolat' => ['title' => 'Kapcsolat', 'content' => $paragraph('Írjon nekünk a szervezőknek.')],
@@ -53,4 +52,3 @@ foreach ($pages as $slug => $page) {
 
 update_option('show_on_front', 'page');
 update_option('page_on_front', $ids['kezdolap']);
-update_option('page_for_posts', $ids['hirek']);
