@@ -16,6 +16,18 @@ add_action('template_redirect', function (): void {
     }
 }, 1);
 
+// The front page shows a fixed list of the latest Posts, so /page/N would only duplicate it
+add_action('template_redirect', function (): void {
+    global $wp_query;
+
+    if (is_front_page() && is_paged()) {
+        $wp_query->set_404();
+        status_header(404);
+        nocache_headers();
+        remove_action('template_redirect', 'redirect_canonical');
+    }
+}, 1);
+
 // Core drops a non-default port (like local :8080) from paginated canonical URLs, which cancels their trailing-slash redirect
 add_filter('redirect_canonical', function (mixed $url): mixed {
     $home = wp_parse_url(home_url());

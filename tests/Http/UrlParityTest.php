@@ -28,6 +28,8 @@ it('keeps the legacy public routes', function (string $path, int $status, ?strin
     ['/studio', 301, '/wp/wp-admin/'],
     ['/studio/', 301, '/wp/wp-admin/'],
     ['/studio/posts/12/edit', 301, '/wp/wp-admin/'],
+    ['/page/2', 404],
+    ['/page/2/', 404],
     ['/up', 404],
     ['/szabalyzatok', 404],
     ['/versenykiirasok', 404],
