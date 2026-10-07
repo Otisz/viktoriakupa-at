@@ -16,6 +16,7 @@ add_action('init', function (): void {
         ],
         'public' => true,
         'exclude_from_search' => true,
+        'show_in_nav_menus' => false,
         'has_archive' => 'egyesuletek',
         'rewrite' => ['slug' => 'egyesuletek', 'with_front' => false, 'feeds' => false, 'pages' => false],
         'menu_icon' => 'dashicons-groups',

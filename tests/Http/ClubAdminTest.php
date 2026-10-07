@@ -47,3 +47,10 @@ it('does not link single Club URLs from the Club list screen', function () {
 it('links the Club list on the site from the Club list screen', function () {
     expect(adminPage('/wp/wp-admin/edit.php?post_type=club'))->toContain("href='" . url('/egyesuletek') . "'");
 });
+
+it('does not offer single Clubs as menu items in the menu editor', function () {
+    expect(adminPage('/wp/wp-admin/nav-menus.php'))
+        ->toContain('id="add-post-type-page"')
+        ->toContain('id="add-custom-links"')
+        ->not->toContain('add-post-type-club');
+});
