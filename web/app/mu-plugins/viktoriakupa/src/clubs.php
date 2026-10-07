@@ -2,6 +2,8 @@
 
 namespace ViktoriaKupa;
 
+use WP_Admin_Bar;
+use WP_Post_Type;
 use WP_Query;
 
 add_action('init', function (): void {
@@ -43,3 +45,19 @@ add_action('template_redirect', function (): void {
 add_filter('feed_links_extra_show_post_type_archive_feed', fn(bool $show): bool => $show && ! is_post_type_archive('club'));
 
 add_filter('wpseo_sitemap_exclude_post_type', fn(bool $excluded, string $postType): bool => $excluded || $postType === 'club', 10, 2);
+
+// wp-admin, including its AJAX (Asynchronous JavaScript and XML) requests, should not link to a single Club page, which is a 404
+if (is_admin()) {
+    add_filter('is_post_type_viewable', fn(bool $viewable, WP_Post_Type $postType): bool => $viewable && $postType->name !== 'club', 10, 2);
+}
+
+add_filter('get_sample_permalink_html', fn(string $html, int $postId): string => get_post_type($postId) === 'club' ? '' : $html, 10, 2);
+
+add_action('admin_bar_menu', function (WP_Admin_Bar $adminBar): void {
+    if (is_admin() && get_current_screen()?->post_type === 'club') {
+        $adminBar->remove_node('view');
+        $adminBar->remove_node('preview');
+    }
+}, 100);
+
+add_filter('wpseo_accessible_post_types', fn(array $postTypes): array => array_diff($postTypes, ['club']));
