@@ -12,3 +12,4 @@ require __DIR__ . '/src/mail.php';
 require __DIR__ . '/src/acf.php';
 require __DIR__ . '/src/clubs.php';
 require __DIR__ . '/src/documents.php';
+require __DIR__ . '/src/settings.php';
