@@ -58,3 +58,13 @@ function listedClubs(string $body): array
 
     return array_combine($matches[1], $matches[0]);
 }
+
+/**
+ * @return array<string, string> the download URL of each listed Document, keyed by title
+ */
+function listedDocuments(string $body): array
+{
+    preg_match_all('/<a href="([^"]+)" download>([^<]+)<\/a>/', $body, $matches);
+
+    return array_combine($matches[2], $matches[1]);
+}

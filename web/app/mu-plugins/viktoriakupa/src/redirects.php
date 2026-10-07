@@ -9,4 +9,9 @@ add_action('template_redirect', function (): void {
         wp_safe_redirect(admin_url(), 301);
         exit;
     }
+
+    if ($path === '/dokumentumok') {
+        wp_safe_redirect(home_url('/'), 302);
+        exit;
+    }
 }, 1);
