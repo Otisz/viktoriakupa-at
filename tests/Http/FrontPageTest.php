@@ -16,3 +16,13 @@ it('shows the sponsor and contributor logos on the front Page', function (string
     ['Támogatóink', 'Teszt Támogató logó'],
     ['Közreműködők', 'Teszt Közreműködő logó'],
 ]);
+
+it('lists the 6 latest Posts after the front Page content', function () {
+    $body = request('/')['body'];
+    [$content, $afterContent] = explode('</article>', $body, 2);
+
+    expect(listedPostTitles($content))->toBe([])
+        ->and(listedPostTitles($afterContent))->toBe([
+            'Teszt hír 16', 'Teszt hír 15', 'Teszt hír 14', 'Teszt hír 13', 'Teszt hír 12', 'Teszt hír 11',
+        ]);
+});

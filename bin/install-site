@@ -16,9 +16,10 @@ wp language core install hu_HU
 wp site switch-language hu_HU
 wp language plugin install --all hu_HU
 wp option update timezone_string Europe/Budapest
+wp option update posts_per_page 15
 
 wp plugin activate advanced-custom-fields wordpress-seo
 wp theme activate viktoriakupa
 
-wp rewrite structure '/%postname%'
+wp rewrite structure '/hirek/%postname%'
 wp rewrite flush

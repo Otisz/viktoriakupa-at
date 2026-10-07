@@ -38,3 +38,13 @@ function url(string $path): string
 {
     return rtrim(getenv('TEST_BASE_URL'), '/') . $path;
 }
+
+/**
+ * @return list<string>
+ */
+function listedPostTitles(string $body): array
+{
+    preg_match_all('/<h2><a href="[^"]*\/hirek\/teszt-hir-\d+">([^<]+)<\/a><\/h2>/', $body, $matches);
+
+    return $matches[1];
+}
