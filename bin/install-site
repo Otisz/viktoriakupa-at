@@ -21,6 +21,11 @@ wp option update posts_per_page 15
 wp plugin activate advanced-custom-fields wordpress-seo
 wp theme activate viktoriakupa
 
+wp option patch update wpseo_titles title-ptarchive-club '%%pt_plural%% %%page%% %%sep%% %%sitename%%'
+wp option patch update wpseo_titles social-title-ptarchive-club '%%pt_plural%%'
+wp option patch update wpseo_titles title-tax-document_type '%%term_title%% %%page%% %%sep%% %%sitename%%'
+wp option patch update wpseo_titles social-title-tax-document_type '%%term_title%%'
+
 page_id() {
     local id
     id=$(wp post list --post_type=page --name="$1" --field=ID)
