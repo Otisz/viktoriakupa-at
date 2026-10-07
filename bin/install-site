@@ -25,6 +25,8 @@ wp option patch update wpseo_titles title-ptarchive-club '%%pt_plural%% %%page%%
 wp option patch update wpseo_titles social-title-ptarchive-club '%%pt_plural%%'
 wp option patch update wpseo_titles title-tax-document_type '%%term_title%% %%page%% %%sep%% %%sitename%%'
 wp option patch update wpseo_titles social-title-tax-document_type '%%term_title%%'
+wp option patch update wpseo_titles metadesc-post '%%excerpt%%'
+wp option patch update wpseo_titles metadesc-page '%%excerpt%%'
 
 page_id() {
     local id

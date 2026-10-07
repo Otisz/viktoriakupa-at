@@ -15,3 +15,13 @@ it('outputs the Yoast title and Open Graph tags on every page type', function (s
     'Clubs' => ['/egyesuletek', 'Egyesületek - Viktória Kupa'],
     'Document Type' => ['/dokumentumok/teszt-szabalyzatok', 'Teszt szabályzatok - Viktória Kupa'],
 ]);
+
+it('outputs the excerpt as the Yoast meta description', function (string $path, string $description) {
+    $body = request($path)['body'];
+
+    expect($body)->toContain("<meta name=\"description\" content=\"{$description}\" />")
+        ->and($body)->toContain("<meta property=\"og:description\" content=\"{$description}\" />");
+})->with([
+    'Post' => ['/hirek/teszt-hir-16', 'A 16. teszt hír rövid összefoglalója.'],
+    'Page' => ['/rolunk', 'A Viktória Kupa történetéről.'],
+]);
